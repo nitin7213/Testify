@@ -1,8 +1,11 @@
-//import logo from './logo.png';
-import './App.css';
+import Header from './components/Header';
 
 const App = () => {
-  return <div>hello</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default App;

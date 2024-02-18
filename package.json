@@ -10,9 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start --no-test",
-    "build": "react-scripts build --no-test",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build --no-test"
   },
   "eslintConfig": {
     "extends": [
@@ -31,5 +29,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwind": "^4.0.0"
   }
 }
