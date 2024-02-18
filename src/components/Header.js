@@ -1,140 +1,114 @@
 import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import logo from '../logo.png';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='bg-white'>
-      <nav
-        className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'
-        aria-label='Global'
-      >
-        <div className='flex lg:flex-1'>
-          <a
-            href='/'
-            className='-m-1.5 p-1.5'
-          >
-            <span className='sr-only'>Testify</span>
-            <img
-              className='h-8 w-auto'
-              src={logo}
-              alt='Testify'
-            />
-          </a>
-        </div>
-        <div className='flex lg:hidden'>
-          <button
-            type='button'
-            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className='sr-only'>Open main menu</span>
-            <Bars3Icon
-              className='h-6 w-6'
-              aria-hidden='true'
-            />
-          </button>
-        </div>
-        <div className='hidden lg:flex lg:gap-x-12'>
-          <a
-            href='/'
-            className='text-sm font-semibold leading-6 text-gray-900'
-          >
-            Home
-          </a>
-          <a
-            href='/'
-            className='text-sm font-semibold leading-6 text-gray-900'
-          >
-            Courses
-          </a>
-          <a
-            href='/'
-            className='text-sm font-semibold leading-6 text-gray-900'
-          >
-            Practice
-          </a>
-          <a
-            href='/'
-            className='text-sm font-semibold leading-6 text-gray-900'
-          >
-            Cart
-          </a>
-        </div>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <a
-            href='/'
-            className='text-sm font-semibold leading-6 text-gray-900'
-          >
-            Log in <span aria-hidden='true'>&rarr;</span>
-          </a>
-        </div>
-      </nav>
-      <Dialog
-        as='div'
-        className='lg:hidden'
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className='fixed inset-0 z-10' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
-          <div className='flex items-center justify-between'>
-            <div className='-m-1.5 p-1.5'></div>
-            <button
-              type='button'
-              className='-m-2.5 rounded-md p-2.5 text-gray-700'
-              onClick={() => setMobileMenuOpen(false)}
+    <header
+      x-data='{ navbarOpen: false }'
+      className='flex w-full items-center bg-white'
+    >
+      <div className='container mx-auto'>
+        <div className='relative -mx-4 flex items-center justify-between'>
+          <div className='w-60 max-w-full px-4 flex items-center'>
+            <a
+              href='/'
+              className='block w-auto mr-2 py-5'
             >
-              <span className='sr-only'>Close menu</span>
-              <XMarkIcon
-                className='h-6 w-6'
-                aria-hidden='true'
+              <img
+                src={logo}
+                alt='Testify'
+                className='h-auto max-h-10'
               />
-            </button>
+            </a>
+            <div className='text-black text-2xl custom-font'>Testify</div>
           </div>
-          <div className='mt-6 flow-root'>
-            <div className='-my-6 divide-y divide-gray-500/10'>
-              <div className='space-y-2 py-6'>
-                <a
-                  href='/'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+
+          <div className='flex w-full items-center justify-between px-4'>
+            <div>
+              {/* Conditional rendering based on mobileMenuOpen state */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className={`h-8 w-12 absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+              >
+                <div
+                  className={`h-${
+                    mobileMenuOpen ? '0' : '2'
+                  } w-6 flex items-center justify-between transition-transform ${
+                    mobileMenuOpen ? 'rotate-45 h-0' : 'rotate-0'
+                  }`}
                 >
-                  Home
-                </a>
-                <a
-                  href='/'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  <span className='h-[2px] w-6 bg-black transform origin-right'></span>
+                </div>
+                <div
+                  className={`h-${
+                    mobileMenuOpen ? '0' : '2'
+                  } w-6 flex items-center justify-between transition-transform ${
+                    mobileMenuOpen ? '-rotate-45 h-0' : 'rotate-0'
+                  }`}
                 >
-                  Courses
-                </a>
-                <a
-                  href='/'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                >
-                  Practice
-                </a>
-                <a
-                  href='/'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                >
-                  Cart
-                </a>
-              </div>
-              <div className='py-6'>
-                <a
-                  href='/'
-                  className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                >
-                  Log in
-                </a>
-              </div>
+                  <span className='h-[2px] w-6 bg-black transform origin-right'></span>
+                </div>
+              </button>
+              <nav
+                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow -2 ${
+                  mobileMenuOpen ? '' : 'hidden'
+                } lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent`}
+              >
+                <ul className='block lg:flex'>
+                  <li>
+                    <a
+                      href='/'
+                      className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='/'
+                      className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    >
+                      Courses
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='/'
+                      className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    >
+                      Practice
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='/'
+                      className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    >
+                      Cart
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div className='hidden justify-end pr-16 sm:flex lg:pr-0'>
+              <a
+                href='/'
+                className='px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-black'
+              >
+                Log in
+              </a>
+              <a
+                href='/'
+                className='rounded-md bg-primary px-7 py-3 text-base font-medium text-black hover:bg-primary/90'
+              >
+                Sign Up
+              </a>
             </div>
           </div>
-        </Dialog.Panel>
-      </Dialog>
+        </div>
+      </div>
     </header>
   );
 };
