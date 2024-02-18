@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Testify - An Edtech Website
+
+## Getting Started with Create React App:
 
 ### `npm start` --> to start
 
