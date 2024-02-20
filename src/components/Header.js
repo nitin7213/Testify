@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import logo from '../logo.png';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
           <div className='flex items-center'>
             <a
               href='/'
-              className='block w-auto mr-2 py-5'
+              className='block w-auto mr-2 py-3' // Adjusted padding here
             >
               <img
                 src={logo}
@@ -47,7 +47,7 @@ const Header = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               ref={crossRef} // Assign ref to the cross button
-              className={`h-8 w-12 absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+              className={`h-8 w-12 absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[3px] ring-primary focus:ring-2 lg:hidden`}
             >
               <div
                 className={`h-2 w-6 flex items-center justify-between transition-transform ${
@@ -66,7 +66,7 @@ const Header = () => {
             </button>
             <nav
               ref={menuRef}
-              className={`absolute right-4 ali top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow -2 ${
+              className={`absolute right-4 ali top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-2 shadow -2 ${
                 mobileMenuOpen ? '' : 'hidden'
               } lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent`}
             >
@@ -74,7 +74,7 @@ const Header = () => {
                 <li>
                   <a
                     href='/'
-                    className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                   >
                     Courses
                   </a>
@@ -82,7 +82,7 @@ const Header = () => {
                 <li>
                   <a
                     href='/'
-                    className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                   >
                     Practice
                   </a>
@@ -90,7 +90,7 @@ const Header = () => {
                 <li>
                   <a
                     href='/'
-                    className='flex py-4 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                    className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                   >
                     Cart
                   </a>
@@ -102,13 +102,13 @@ const Header = () => {
             <div className='hidden justify-end pr-16 sm:flex lg:pr-0'>
               <a
                 href='/'
-                className='px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-black'
+                className='px-7 py-2 text-base font-medium text-dark hover:text-primary dark:text-black'
               >
                 Log in
               </a>
               <a
                 href='/'
-                className='rounded-md bg-primary px-7 py-3 text-base font-medium text-black hover:bg-primary/90'
+                className='rounded-md bg-primary px-7 py-2 text-base font-medium text-black hover:bg-primary/90'
               >
                 Sign Up
               </a>

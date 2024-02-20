@@ -1,10 +1,17 @@
 import React from 'react';
+import Sponser from './Sponser';
+import PriceChart from './PriceChart';
+import FullScreenVideo from './FullScreenVideo';
+import TextWithVideo from './TextWithVideo';
 
 function Hero() {
   return (
-    <div className='flex flex-col justify-between min-h-screen'>
-      <div className='h-90 flex-grow'>Vaasu Goyal</div>
-    </div>
+    <>
+      <FullScreenVideo />
+      <TextWithVideo />
+      <PriceChart />
+      <Sponser />;
+    </>
   );
 }
 
