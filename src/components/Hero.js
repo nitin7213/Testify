@@ -1,5 +1,5 @@
 import React from 'react';
-import Sponser from './Sponser';
+import Companies from './Companies';
 import PriceChart from './PriceChart';
 import FullScreenVideo from './FullScreenVideo';
 import TextWithVideo from './TextWithVideo';
@@ -10,7 +10,7 @@ function Hero() {
       <FullScreenVideo />
       <TextWithVideo />
       <PriceChart />
-      <Sponser />;
+      <Companies />;
     </>
   );
 }

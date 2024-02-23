@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className='sticky top-0 bg-white bg-opacity-80 z-50'>
+    <header className='sticky top-0 bg-white bg-opacity-80 z-50 select-none'>
       <div className='container mx-auto'>
         <div className='relative flex items-center justify-between'>
           <div className='flex items-center'>
@@ -100,18 +101,19 @@ const Header = () => {
           </div>
           <div className='flex justify-end'>
             <div className='hidden justify-end pr-16 sm:flex lg:pr-0'>
-              <a
-                href='/'
+              <Link
+                to='/Login'
                 className='px-7 py-2 text-base font-medium text-dark hover:text-primary dark:text-black'
               >
-                Log in
-              </a>
-              <a
-                href='/'
-                className='rounded-md bg-primary px-7 py-2 text-base font-medium text-black hover:bg-primary/90'
+                Login
+              </Link>
+
+              <Link
+                to='/Signup'
+                className='px-7 py-2 text-base font-medium text-dark hover:text-primary dark:text-black'
               >
-                Sign Up
-              </a>
+                SignUp
+              </Link>
             </div>
           </div>
         </div>

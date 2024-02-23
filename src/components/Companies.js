@@ -5,16 +5,13 @@ import gfg from '../assets/gfg.png';
 import github from '../assets/github.png';
 import codechef from '../assets/codechef.png';
 
-function Sponsor() {
+function Companies() {
   return (
     <div className='bg-gray-100 py-8 md:py-16'>
       <div className='container mx-auto'>
         <div className='text-center mb-8'>
           <div className='mb-3 mt-0 text-lg whitespace-nowrap font-semibold leading-tight tracking-[-1.2px] dark:text-black xs:text-2xl sm:text-3xl md:text-[45px] md:leading-tight text-dark overflow-hidden'>
-            This Website is made with Collaboration
-          </div>
-          <div className='text-md text-xs md:text-[25px]'>
-            Special Thanks and for efforts to these websites
+            CHOSEN BY LEARNERS WORKING AT
           </div>
         </div>
         <div className='flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-16'>
@@ -49,4 +46,4 @@ function Sponsor() {
   );
 }
 
-export default Sponsor;
+export default Companies;
