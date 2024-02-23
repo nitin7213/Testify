@@ -1,7 +1,6 @@
-# Testify - An Edtech Website
+# Testify - An Ed-tech Website
 
 ## WEBSITE LINK: https://testify-gray.vercel.app/
-
 
 ## Getting Started with Create React App:
 
@@ -10,4 +9,3 @@
 ### `npm test` --> to test
 
 ### `npm run build`-> to build
-
