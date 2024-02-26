@@ -23,6 +23,7 @@ const App = () => {
 
 const router = createBrowserRouter([
   {
+    paath: '/',
     element: <App />,
     children: [
       {
