@@ -29,18 +29,20 @@ const Header = () => {
     <header className='sticky top-0 bg-white bg-opacity-80 z-50 select-none'>
       <div className='container mx-auto'>
         <div className='relative flex items-center justify-between'>
-          <div className='flex items-center'>
-            <a
-              href='/'
-              className='block w-auto mr-2 py-3' // Adjusted padding here
+          <div className='flex items-center flex-row '>
+            <Link
+              to='/'
+              className='flex w-auto  py-3' // Adjusted padding here
             >
               <img
                 src={logo}
                 alt='Testify'
-                className='h-auto max-h-10'
+                className='h-auto max-h-10 mr-4'
               />
-            </a>
-            <div className='text-blue-500 text-2xl custom-font'>Testify</div>
+              <div className='text-blue-500 text-2xl custom-font p-1'>
+                Testify
+              </div>
+            </Link>
           </div>
 
           <div className='flex items-center justify-center'>
@@ -73,43 +75,64 @@ const Header = () => {
             >
               <ul className='block lg:flex'>
                 <li>
-                  <a
-                    href='/'
+                  <Link
+                    to='/courses'
                     className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                   >
                     Courses
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href='/'
+                  <Link
+                    to='/practice'
                     className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                   >
                     Practice
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href='/'
+                  <Link
+                    to='/cart'
                     className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                   >
                     Cart
-                  </a>
+                  </Link>
                 </li>
+                {/* Render Login and SignUp links conditionally */}
+                {mobileMenuOpen && window.innerWidth <= 640 && (
+                  <>
+                    <li>
+                      <Link
+                        to='/login'
+                        className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                      >
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/signup'
+                        className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
+                      >
+                        SignUp
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
           </div>
           <div className='flex justify-end'>
-            <div className='hidden justify-end pr-16 sm:flex lg:pr-0'>
+            <div className='hidden justify-end pr-16 sm:flex lg:pr-0 '>
               <Link
-                to='/Login'
+                to='/login'
                 className='px-7 py-2 text-base font-medium text-dark hover:text-primary dark:text-black'
               >
                 Login
               </Link>
 
               <Link
-                to='/Signup'
+                to='/signup'
                 className='px-7 py-2 text-base font-medium text-dark hover:text-primary dark:text-black'
               >
                 SignUp
