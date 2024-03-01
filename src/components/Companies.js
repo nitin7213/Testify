@@ -1,9 +1,5 @@
 import React from 'react';
-import leetcode from '../assets/leetcode.png';
-import w3w from '../assets/w3w.png';
-import gfg from '../assets/gfg.png';
-import github from '../assets/github.png';
-import codechef from '../assets/codechef.png';
+const { leetCode, w3w, gfg, github, codeChef } = require('../utils/constant');
 
 function Companies() {
   return (
@@ -16,7 +12,7 @@ function Companies() {
         </div>
         <div className='flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-16'>
           <img
-            src={codechef}
+            src={codeChef}
             alt='CodeChef'
             className='h-8 md:h-12 lg:h-16'
           />
@@ -36,7 +32,7 @@ function Companies() {
             className='h-8 md:h-12 lg:h-16'
           />
           <img
-            src={leetcode}
+            src={leetCode}
             alt='LeetCode'
             className='h-8 md:h-12 lg:h-16'
           />

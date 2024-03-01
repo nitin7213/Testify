@@ -1,6 +1,5 @@
 import React from 'react';
-import herovideo from '../assets/herovideo.mp4';
-import { FaArrowRight } from 'react-icons/fa';
+const { heroVideo, FaArrowRight } = require('../utils/constant');
 
 function FullScreenVideo() {
   const heading = 'Testify';
@@ -9,7 +8,7 @@ function FullScreenVideo() {
   return (
     <div className='relative h-screen '>
       <video
-        src={herovideo}
+        src={heroVideo}
         className='absolute top-0 left-0 w-full h-full object-cover'
         disablePictureInPicture
         autoPlay

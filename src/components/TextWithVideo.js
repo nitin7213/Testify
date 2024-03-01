@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import textvideo1 from '../assets/textvideo1.mp4';
+const { video, FaArrowRight } = require('../utils/constant');
 
 const TextWithVideoContainer = ({ order }) => {
   return (
@@ -10,7 +9,7 @@ const TextWithVideoContainer = ({ order }) => {
         className={`video-container flex justify-center items-center md:order-${order}`}
       >
         <video
-          src={textvideo1}
+          src={video}
           className='object-cover rounded-3xl'
           disablePictureInPicture
           autoPlay

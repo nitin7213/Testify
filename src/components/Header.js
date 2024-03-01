@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
+const { logo } = require('../utils/constant');
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -74,7 +74,7 @@ const Header = () => {
               } lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent`}
             >
               <ul className='block lg:flex'>
-                <li>
+                <li onClick={() => setMobileMenuOpen(false)}>
                   <Link
                     to='/courses'
                     className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
@@ -82,7 +82,7 @@ const Header = () => {
                     Courses
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => setMobileMenuOpen(false)}>
                   <Link
                     to='/practice'
                     className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
@@ -90,7 +90,7 @@ const Header = () => {
                     Practice
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => setMobileMenuOpen(false)}>
                   <Link
                     to='/cart'
                     className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
@@ -101,7 +101,7 @@ const Header = () => {
                 {/* Render Login and SignUp links conditionally */}
                 {mobileMenuOpen && window.innerWidth <= 640 && (
                   <>
-                    <li>
+                    <li onClick={() => setMobileMenuOpen(false)}>
                       <Link
                         to='/login'
                         className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
@@ -109,9 +109,9 @@ const Header = () => {
                         Login
                       </Link>
                     </li>
-                    <li>
+                    <li onClick={() => setMobileMenuOpen(false)}>
                       <Link
-                        to='/signup'
+                        to='/forgetPass'
                         className='flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-black lg:ml-12 lg:inline-flex'
                       >
                         SignUp

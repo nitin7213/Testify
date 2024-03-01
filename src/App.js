@@ -1,10 +1,13 @@
+//Components
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import CopyrightBar from './components/CopyrightBar';
+//Routers
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+//Pages
+import LoginForm from './pages/Login';
+import SignupForm from './pages/Signup';
 import Courses from './pages/Courses';
 import Practice from './pages/Practice';
 import Cart from './pages/Cart';
@@ -32,11 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <Login />,
+        element: <LoginForm />,
       },
       {
         path: '/signup',
-        element: <Signup />,
+        element: <SignupForm />,
       },
       {
         path: '/courses',

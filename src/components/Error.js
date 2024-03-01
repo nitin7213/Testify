@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Lottie from 'lottie-react';
-import errorAnimation from '../assets/Error.json';
+const { errorAnimation } = require('../utils/constant');
 
 const Error = () => {
   return (
     <div className='flex flex-col items-center justify-center lg:min-h-screen'>
       <div className='text-center mb-5'>
-        <h1 className='text-3xl mt-5 p-2  custom-font text-blue-500'>
-          Link Broken !
+        <h1 className='text-2xl mt-5 p-2   font-bold text-blue-500'>
+          Oops! That page can’t be found
         </h1>
         <div className='w-full md:w-auto h-auto max-w-md mx-auto'>
           <Lottie
