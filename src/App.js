@@ -11,6 +11,7 @@ import SignupForm from './pages/Signup';
 import Courses from './pages/Courses';
 import Practice from './pages/Practice';
 import Cart from './pages/Cart';
+import NotFound from './components/NotFound';
 import Error from './components/Error';
 
 const App = () => {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
@@ -49,10 +51,9 @@ const router = createBrowserRouter([
       { path: '/cart', element: <Cart /> },
       {
         path: '*',
-        element: <Error />,
+        element: <NotFound />,
       },
     ],
-    errorElement: <Error />,
   },
 ]);
 
